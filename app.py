@@ -18,7 +18,7 @@ with open("property_cols.pkl", "rb") as f:
 
 st.markdown(
     """
-    <h1 style='text-align: center; color: #1f77b4;'>Check Loan Eligibility</h1>
+    <h1 style='text-align: center; color: #1f77b4;'>Loan Approval Prediction</h1>
     """,
     unsafe_allow_html=True
 )
