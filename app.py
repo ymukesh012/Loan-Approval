@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 import pickle
 
-# ------------------- Load Model and Preprocessors -------------------
+# ------------------- Load Model -------------------
 
 model = joblib.load("loan_model.pkl")
 joblib.dump(model, 'loan_model.pkl', compress=3)
@@ -53,7 +53,7 @@ def preprocess(df):
         df[col] = df[col].astype(str).apply(lambda x: x if x in le.classes_ else le.classes_[0])
         df[col] = le.transform(df[col])
 
-    # 2. Dependents (Manual mapping used in your notebook)
+    # 2. Dependents (Manual mapping)
     df['Dependents'] = df['Dependents'].replace('3+', 3).astype(int)
 
     # 3. One-hot encode Property_Area
