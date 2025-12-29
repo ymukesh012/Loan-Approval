@@ -7,6 +7,8 @@ import pickle
 # ------------------- Load Model and Preprocessors -------------------
 
 model = joblib.load("loan_model.pkl")
+joblib.dump(model, 'loan_model.pkl', compress=3)
+
 label_encoders = joblib.load("label_encoders.pkl")
 scaler = joblib.load("scaler.pkl")
 
